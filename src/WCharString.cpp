@@ -158,8 +158,15 @@ bool WCharString::WChar_tStartsWith(wchar_t * arg1eval, string arg2test) {
 }
 
 string WCharString::SysErrMessage() {
-    string errorDesc = strerror(errno);
-    return errorDesc;
+    int index = errno;
+    const char * ret = ERROR_0;
+    for (int i = 0; i < index; i++) {
+        while (ret[0] != '\0') {
+            ret++;
+        }
+        ret++;
+    }
+    return string(ret);
 }
 
 WCharString::WCharString() {
