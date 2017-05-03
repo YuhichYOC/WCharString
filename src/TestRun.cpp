@@ -1,8 +1,22 @@
 /*
+ *
  * TestRun.cpp
  *
- *  Created on: 2017/02/12
- *      Author: y
+ * Copyright 2016 Yuichi Yoshii
+ *     吉井雄一 @ 吉井産業  you.65535.kir@gmail.com
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ *
  */
 
 #include "WCharString.h"
@@ -68,6 +82,56 @@ void Test08() {
     }
 }
 
+void Test09() {
+    char testvalue1[10] = "ABCDEFGHI";
+    unsigned char testvalue2[10] = "ABCDEFGHI";
+    string testvalue3s = "ABCDEFGHI";
+    char testvalue3[10] = { 0 };
+    for (int i = 0; i < 10; i++) {
+        testvalue3[i] = testvalue3s.c_str()[i];
+    }
+    string testvalue4s = "ABCDEFGHI";
+    unsigned char testvalue4[10] = { 0 };
+    for (int i = 0; i < 10; i++) {
+        testvalue4[i] = testvalue4s.c_str()[i];
+    }
+    string testvalue5s = "ABCあいう";
+    char testvalue5[13] = { 0 };
+    for (int i = 0; i < 13; i++) {
+        testvalue5[i] = testvalue5s.c_str()[i];
+    }
+    string testvalue6s = "ABCあいう";
+    unsigned char testvalue6[13] = { 0 };
+    for (int i = 0; i < 13; i++) {
+        testvalue6[i] = testvalue6s.c_str()[i];
+    }
+    for (int i = 0; i < 10; i++) {
+        cout << testvalue1[i] << "\n";
+    }
+    for (int i = 0; i < 10; i++) {
+        cout << testvalue2[i] << "\n";
+    }
+    for (int i = 0; i < 10; i++) {
+        cout << testvalue3[i] << "\n";
+    }
+    for (int i = 0; i < 10; i++) {
+        cout << testvalue4[i] << "\n";
+    }
+    for (int i = 0; i < 13; i++) {
+        cout << testvalue5[i] << "\n";
+    }
+    for (int i = 0; i < 13; i++) {
+        cout << testvalue6[i] << "\n";
+    }
+    cout << testvalue5 << "\n";
+    cout << testvalue6 << "\n";
+    char testvalue7[13] = { 0 };
+    for (int i = 0; i < 13; i++) {
+        testvalue7[i] = testvalue6[i];
+    }
+    cout << testvalue7 << "\n";
+}
+
 int main() {
     Test01();
     Test02();
@@ -77,5 +141,6 @@ int main() {
     Test06();
     Test07();
     Test08();
+    Test09();
     return 0;
 }
