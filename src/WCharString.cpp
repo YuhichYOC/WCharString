@@ -203,7 +203,7 @@ int WCharString::NullPosition(char * arg) {
     while (arg[ret] != '\0') {
         ret++;
         if (ret > maxNullPosition) {
-            return -1;
+            return maxNullPosition;
         }
     }
     return ret;
@@ -214,7 +214,7 @@ int WCharString::NullPosition(unsigned char * arg) {
     while (arg[ret] != '\0') {
         ret++;
         if (ret > maxNullPosition) {
-            return -1;
+            return maxNullPosition;
         }
     }
     return ret;
@@ -225,7 +225,7 @@ int WCharString::NullPosition(wchar_t * arg) {
     while (arg[ret] != (wchar_t) ('\0')) {
         ret++;
         if (ret > maxNullPosition) {
-            return -1;
+            return maxNullPosition;
         }
     }
     return ret;
@@ -236,7 +236,7 @@ int WCharString::NullPosition(const char * arg) {
     while (arg[ret] != '\0') {
         ret++;
         if (ret > maxNullPosition) {
-            return -1;
+            return maxNullPosition;
         }
     }
     return ret;
@@ -247,7 +247,7 @@ int WCharString::NullPosition(const unsigned char * arg) {
     while (arg[ret] != '\0') {
         ret++;
         if (ret > maxNullPosition) {
-            return -1;
+            return maxNullPosition;
         }
     }
     return ret;
@@ -258,7 +258,7 @@ int WCharString::NullPosition(const wchar_t * arg) {
     while (arg[ret] != (wchar_t) ('\0')) {
         ret++;
         if (ret > maxNullPosition) {
-            return -1;
+            return maxNullPosition;
         }
     }
     return ret;
